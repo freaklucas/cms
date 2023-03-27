@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 import brazuca from "../../../public/images/luk.svg";
 
+
 import { ActiveLink } from "../ActiveLink";
 
 export function Header() {
