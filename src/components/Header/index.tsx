@@ -1,36 +1,36 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import brazuca from "../../../public/images/luk.svg";
-import Link from "next/link";
 
-export function Header() {
-  return (
+import { ActiveLink } from "../ActiveLink";
+
+export function Header(){
+  return(
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <a>
-          <Image 
-            src={brazuca} 
-            alt="Logo lucas"
-            className={styles.brazuca} 
-          />
-        </a>
+        <ActiveLink href="/" activeClassName={styles.active}>
+
+           <Image src={brazuca}  alt="brazuca Logo"/>
+
+        </ActiveLink>
+
         <nav>
-          <Link href="/" className={styles.home}>
-            Home
-          </Link>
-          <Link href="/posts" className={styles.content}>
-            Conteúdo
-          </Link>
-          <Link href="/about" className={styles.about}>
-            Sobre
-          </Link>
+          <ActiveLink href="/" as={`/`} passHref legacyBehavior activeClassName={styles.active}>
+            <a>Home</a>
+          </ActiveLink>
+
+          <ActiveLink  href="/posts" as={`/posts`} passHref legacyBehavior activeClassName={styles.active}>
+            <a>Conteúdos</a>
+          </ActiveLink>
+
+          <ActiveLink  href="/about" as={`/about`} passHref legacyBehavior activeClassName={styles.active}>
+            <a>Quem somos?</a>
+          </ActiveLink>
         </nav>
-        <a
-          className={styles.readyButton}
-          type="button"
-          href="https://github.com/freaklucas"
-        >Começar</a>
+
+        <a className={styles.readyButton} type="button" href="">COMEÇAR</a>
+
       </div>
     </header>
-  );
+  )
 }

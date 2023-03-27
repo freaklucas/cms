@@ -1,17 +1,12 @@
-.brazuca {
-    // max-width: 100px;
-    // max-height: 100px;
-   width: 28%;
-   height: 20%;
-}
 
-.headerContainer {
+
+.headerContainer{
   height: 6rem;
   border-bottom: 1px solid var(--gray-200);
-  background: var(--gray-200);
+  background: var(--gray-700);
 }
 
-.headerContent {
+.headerContent{
   max-width: 1120px;
   height: 6rem;
   margin: 0 auto;
@@ -20,82 +15,80 @@
   display: flex;
   align-items: center;
 
-  img {
+  img{
     cursor: pointer;
+    width: 30%;
+    height: 20%;
   }
 
-  nav {
-    margin-left: inline-block;
+  nav{
+    margin-left: 5rem;
     height: 6rem;
+
+    a{
+      display: inline-block;
+      position: relative;
+      padding: 0 0.5rem;
+      height: 6rem;
+      line-height: 6rem;
+      color: var(--gray-100);
+      transition: color 0.2s;
+
+      & + a {
+        margin-left: 2rem;
+      }
+
+      &:hover{
+        color: var(--white);
+      }
+
+      &.active{
+        color: var(--yellow-500);
+        font-weight: bold;
+      }
+
+    }
   }
 }
 
-nav .home,
-.content,
-.about {
-  position: relative;
-  padding: 0 0.5rem;
-  line-height: 6rem;
-  color: var(--gray-100);
-
-  margin-left: 2rem;
-  transition: color 0.2s;
-}
-
-nav .home:hover,
-.content:hover,
-.about:hover {
+.readyButton{
+  margin-left: auto;
+  height: 3rem;
+  border-radius: 3rem;
+  background: var(--blue-900);
+  border:0;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--white);
-}
-
-nav .home.active,
-nav.content.active,
-nav .about.active {
-  color: var(--yellow-500);
   font-weight: bold;
+  transition: filter 0.2s;
+
+  &:hover{
+    filter: brightness(1.1)
+  }
 }
 
-.readyButton {
-    margin-left: auto;
-    height: 3rem;
-    border-radius: 3rem;
-    background: var(--blue-900);
-    padding: 0 1.5rem;
+
+@media (max-width: 870px){
+  .headerContainer{
+    height: 11rem;
+    padding: 0.5rem 0;
+  }
+
+  .headerContent{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font-weight: 900;
-    transition: filter 0.4s;
-}
+    flex-direction: column;
 
-.readyButton:hover {
-    filter: brightness(1.1);
-    
-}
-
-@media (max-width: 870px) {
-    .brazuca {
-        width: 100px;
-        height: 100px;
-    }
-    .headerContainer {
-        height: 11rem;
-        padding: 0.5rem 0;
+    nav{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .headerContent {
-        display: flex;
-        flex-direction: column;
-
-        nav {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .readyButton {
-            display: none;
-        }
-    }
+    .readyButton{
+      display: none;
+    }    
+  }
 }
