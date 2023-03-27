@@ -4,33 +4,50 @@ import brazuca from "../../../public/images/luk.svg";
 
 import { ActiveLink } from "../ActiveLink";
 
-export function Header(){
-  return(
+export function Header() {
+  return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <ActiveLink href="/" activeClassName={styles.active}>
-
-           <Image src={brazuca}  alt="brazuca Logo"/>
-
+          <Image src={brazuca} alt="brazuca Logo" />
         </ActiveLink>
 
         <nav>
-          <ActiveLink href="/" as={`/`} passHref legacyBehavior activeClassName={styles.active}>
+          <ActiveLink
+            href="/"
+            as={`/`}
+            passHref
+            legacyBehavior
+            activeClassName={styles.active}
+          >
             <a>Home</a>
           </ActiveLink>
 
-          <ActiveLink  href="/posts" as={`/posts`} passHref legacyBehavior activeClassName={styles.active}>
+          <ActiveLink
+            href="/posts"
+            as={`/posts`}
+            passHref
+            legacyBehavior
+            activeClassName={styles.active}
+          >
             <a>Conteúdos</a>
           </ActiveLink>
 
-          <ActiveLink  href="/about" as={`/about`} passHref legacyBehavior activeClassName={styles.active}>
+          <ActiveLink
+            href="/about"
+            as={`/about`}
+            passHref
+            legacyBehavior
+            activeClassName={styles.active}
+          >
             <a>Quem somos?</a>
           </ActiveLink>
         </nav>
 
-        <a className={styles.readyButton} type="button" href="">COMEÇAR</a>
-
+        <a className={styles.readyButton} type="button" href="">
+          Começar
+        </a>
       </div>
     </header>
-  )
+  );
 }
