@@ -32,34 +32,57 @@ export default function Home({ content }: ContentProps) {
         <div className={styles.containerHeader}>
           <section className={styles.ctaText}>
             <h1>Projetos reais desenvolvidos.</h1>
-            <span>CMS com criação de conteúdo para desenvolvimento.</span>
+            <span>
+                CMS com criação de conteúdo 
+                para desenvolvimento.
+            </span>
             <a>
               <button>Conhecer mais</button>
             </a>
           </section>
-          <img src="/images/c.jpg" alt="logo de projetos" />
+          <img 
+            src="/images/c.jpg" 
+            alt="logo de projetos" 
+          />
         </div>
 
         <hr className={styles.divisor} />
         <div className={styles.sectionContent}>
           <section>
-            <h2>Criação de aplicações escaláveis e modernas.</h2>
-            <span>Utilizando JavaScript, TypeScript, Next, Jest 🚀</span>
+            <h2>
+              Criação de aplicações 
+              escaláveis e modernas.
+            </h2>
+            <span>
+                Utilizando JavaScript, TypeScript, 
+                Next, Jest 🚀
+            </span>
           </section>
-          <img src="/images/b.jpg" alt="logo de projetos" />
+          <img 
+            src="/images/b.jpg" 
+            alt="logo de projetos" 
+          />
         </div>
 
         <div className={styles.nextLevelContent}>
           <h2>
-            <span className={styles.projects}>+20 projetos</span> desenvolvidos,
+            <span className={styles.projects}>
+              +20 projetos
+            </span> desenvolvidos,
             conheça algumas publicações.
           </h2>
-          <span>Há quase 4 anos criando aplicações para web.</span>
+          <span>
+            Há quase 4 anos criando aplicações para web.
+          </span>
           <a>
             <button>Conhecer</button>
           </a>
 
-          <Image quality={100} src={techs} alt="Tecnologias" />
+          <Image 
+            quality={100} 
+            src={techs} 
+            alt="Tecnologias" 
+          />
         </div>
       </main>
     </>
@@ -71,7 +94,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const response = await prismic.query([
     Prismic.Predicates.at("document.type", "home"),
   ]);
-  // console.log(response.results[0].data);
+
   const {
     title,
     sub_title,
