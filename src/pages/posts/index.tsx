@@ -57,10 +57,16 @@ export default function Posts({ posts: postsBlog, page, totalPage }: PostsProps)
     }
 
     const getPosts = response.results.map( post => {
+      const description = post.data.description.find(content => {
+        const text = content.text;
+        return content.type === 'paragraph' && text !== undefined;
+      });
+      const descriptionText = description ? description.text : '';
+
       return {
         slug: post.uid,
         title: RichText.asText(post.data.title),
-        description: (post.data.description.find(content => content.type === 'paragraph')?.text ?? '') as string,
+        description: descriptionText,
         cover: post.data.cover.url,
         updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
           day: '2-digit',
