@@ -22,6 +22,7 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@types/prismic-dom": "^2.1.1",
     "dotenv": "^16.0.3"
   }
 }
