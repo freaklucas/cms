@@ -60,7 +60,7 @@ export default function Posts({ posts: postsBlog, page, totalPage }: PostsProps)
       return {
         slug: post.uid,
         title: RichText.asText(post.data.title),
-        description: post.data.description.find(content => content.type === 'paragraph')?.text ?? '',
+        description: (post.data.description.find(content => content.type === 'paragraph')?.text ?? '') as string,
         cover: post.data.cover.url,
         updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
           day: '2-digit',
