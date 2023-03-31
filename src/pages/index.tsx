@@ -9,6 +9,7 @@ import { getPrismicClient } from "@/services/prismic";
 import Prismic from "@prismicio/client";
 
 /// <reference path="prismic-dom.d.ts"/>
+/// <reference path="./prismic-dom.d.ts" />
 
 type Content = {
   title: string;
