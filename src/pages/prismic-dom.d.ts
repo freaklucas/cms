@@ -1,1 +1,3 @@
-declare module 'prismic-dom';
+declare module 'prismic-dom' {
+    export const RichText: any;
+}
