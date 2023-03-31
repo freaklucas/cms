@@ -22,7 +22,6 @@ interface ContentProps {
 }
 
 export default function Home({ content }: ContentProps) {
-  console.log(content);
   return (
     <>
       <head>
@@ -40,7 +39,7 @@ export default function Home({ content }: ContentProps) {
               <button>Conhecer mais</button>
             </a>
           </section>
-          <img 
+          <img
             src="/images/c.jpg" 
             alt="logo de projetos" 
           />
