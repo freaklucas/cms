@@ -8,6 +8,8 @@ import { RichText } from "prismic-dom";
 import { getPrismicClient } from "@/services/prismic";
 import Prismic from "@prismicio/client";
 
+/// <reference path="prismic-dom.d.ts"/>
+
 type Content = {
   title: string;
   titleContent: string;
